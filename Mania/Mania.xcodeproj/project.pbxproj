@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B2130BA125F3E4FF009BF749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2130BA025F3E4FF009BF749 /* AppDelegate.swift */; };
 		B2130BA325F3E4FF009BF749 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2130BA225F3E4FF009BF749 /* SceneDelegate.swift */; };
-		B2130BA525F3E4FF009BF749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2130BA425F3E4FF009BF749 /* ViewController.swift */; };
+		B2130BA525F3E4FF009BF749 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2130BA425F3E4FF009BF749 /* ScannerViewController.swift */; };
 		B2130BA825F3E4FF009BF749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2130BA625F3E4FF009BF749 /* Main.storyboard */; };
 		B2130BAA25F3E500009BF749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2130BA925F3E500009BF749 /* Assets.xcassets */; };
 		B2130BAD25F3E500009BF749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2130BAB25F3E500009BF749 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		B2130B9D25F3E4FF009BF749 /* Mania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2130BA025F3E4FF009BF749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2130BA225F3E4FF009BF749 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B2130BA425F3E4FF009BF749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2130BA425F3E4FF009BF749 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		B2130BA725F3E4FF009BF749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2130BA925F3E500009BF749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2130BAC25F3E500009BF749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,103 @@
 		B2130B9F25F3E4FF009BF749 /* Mania */ = {
 			isa = PBXGroup;
 			children = (
+				B2130BB725F3E5E2009BF749 /* Features */,
 				B2130BA025F3E4FF009BF749 /* AppDelegate.swift */,
 				B2130BA225F3E4FF009BF749 /* SceneDelegate.swift */,
-				B2130BA425F3E4FF009BF749 /* ViewController.swift */,
+				B2130BA425F3E4FF009BF749 /* ScannerViewController.swift */,
 				B2130BA625F3E4FF009BF749 /* Main.storyboard */,
 				B2130BA925F3E500009BF749 /* Assets.xcassets */,
 				B2130BAB25F3E500009BF749 /* LaunchScreen.storyboard */,
 				B2130BAE25F3E500009BF749 /* Info.plist */,
 			);
 			path = Mania;
+			sourceTree = "<group>";
+		};
+		B2130BB525F3E5D2009BF749 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2130BB625F3E5D9009BF749 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2130BB525F3E5D2009BF749 /* Model */,
+				B2130BBA25F3E604009BF749 /* Network */,
+				B2130BB925F3E5FC009BF749 /* Provider */,
+				B2130BB825F3E5F2009BF749 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2130BB725F3E5E2009BF749 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B2130BBB25F3E610009BF749 /* ScanQRcode */,
+				B2130BB625F3E5D9009BF749 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B2130BB825F3E5F2009BF749 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2130BB925F3E5FC009BF749 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		B2130BBA25F3E604009BF749 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B2130BBB25F3E610009BF749 /* ScanQRcode */ = {
+			isa = PBXGroup;
+			children = (
+				B2130BBF25F3E66E009BF749 /* Model */,
+				B2130BBC25F3E658009BF749 /* Network */,
+				B2130BBD25F3E661009BF749 /* Provider */,
+				B2130BBE25F3E667009BF749 /* View */,
+			);
+			path = ScanQRcode;
+			sourceTree = "<group>";
+		};
+		B2130BBC25F3E658009BF749 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B2130BBD25F3E661009BF749 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		B2130BBE25F3E667009BF749 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2130BBF25F3E66E009BF749 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2130BA525F3E4FF009BF749 /* ViewController.swift in Sources */,
+				B2130BA525F3E4FF009BF749 /* ScannerViewController.swift in Sources */,
 				B2130BA125F3E4FF009BF749 /* AppDelegate.swift in Sources */,
 				B2130BA325F3E4FF009BF749 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4JLFD9VKNK;
 				INFOPLIST_FILE = Mania/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +394,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4JLFD9VKNK;
 				INFOPLIST_FILE = Mania/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
