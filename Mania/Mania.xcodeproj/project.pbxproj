@@ -13,6 +13,19 @@
 		B2130BA825F3E4FF009BF749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2130BA625F3E4FF009BF749 /* Main.storyboard */; };
 		B2130BAA25F3E500009BF749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2130BA925F3E500009BF749 /* Assets.xcassets */; };
 		B2130BAD25F3E500009BF749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2130BAB25F3E500009BF749 /* LaunchScreen.storyboard */; };
+		BC39B45325F7DF6E0002B208 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC39B45225F7DF6E0002B208 /* Home.storyboard */; };
+		BC39B45625F7DFB20002B208 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B45525F7DFB20002B208 /* HomeViewController.swift */; };
+		BC39B45A25F7E13E0002B208 /* Cardapio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B45925F7E13E0002B208 /* Cardapio.swift */; };
+		BC39B45F25F7E24B0002B208 /* PromocaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B45D25F7E24B0002B208 /* PromocaoTableViewCell.swift */; };
+		BC39B46025F7E24B0002B208 /* PromocaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B45E25F7E24B0002B208 /* PromocaoTableViewCell.xib */; };
+		BC39B46925F7E3B70002B208 /* PromocaoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B46725F7E3B70002B208 /* PromocaoCollectionViewCell.swift */; };
+		BC39B46A25F7E3B70002B208 /* PromocaoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B46825F7E3B70002B208 /* PromocaoCollectionViewCell.xib */; };
+		BC39B46E25F7E9980002B208 /* CategoriaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B46D25F7E9980002B208 /* CategoriaTableViewCell.swift */; };
+		BC39B47125F7E9A30002B208 /* CategoriaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B47025F7E9A30002B208 /* CategoriaTableViewCell.xib */; };
+		BC39B47725F7EA2F0002B208 /* CategoriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B47625F7EA2F0002B208 /* CategoriaCollectionViewCell.swift */; };
+		BC39B47A25F7EA380002B208 /* CategoriaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B47925F7EA380002B208 /* CategoriaCollectionViewCell.xib */; };
+		BC39B47E25F7ECFA0002B208 /* CardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39B47D25F7ECFA0002B208 /* CardapioTableViewCell.swift */; };
+		BC39B48125F7ED020002B208 /* CardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B48025F7ED020002B208 /* CardapioTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +37,19 @@
 		B2130BA925F3E500009BF749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2130BAC25F3E500009BF749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2130BAE25F3E500009BF749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC39B45225F7DF6E0002B208 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BC39B45525F7DFB20002B208 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BC39B45925F7E13E0002B208 /* Cardapio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardapio.swift; sourceTree = "<group>"; };
+		BC39B45D25F7E24B0002B208 /* PromocaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromocaoTableViewCell.swift; sourceTree = "<group>"; };
+		BC39B45E25F7E24B0002B208 /* PromocaoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromocaoTableViewCell.xib; sourceTree = "<group>"; };
+		BC39B46725F7E3B70002B208 /* PromocaoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromocaoCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC39B46825F7E3B70002B208 /* PromocaoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromocaoCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC39B46D25F7E9980002B208 /* CategoriaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriaTableViewCell.swift; sourceTree = "<group>"; };
+		BC39B47025F7E9A30002B208 /* CategoriaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriaTableViewCell.xib; sourceTree = "<group>"; };
+		BC39B47625F7EA2F0002B208 /* CategoriaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriaCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC39B47925F7EA380002B208 /* CategoriaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriaCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC39B47D25F7ECFA0002B208 /* CardapioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardapioTableViewCell.swift; sourceTree = "<group>"; };
+		BC39B48025F7ED020002B208 /* CardapioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardapioTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,8 @@
 		B2130B9F25F3E4FF009BF749 /* Mania */ = {
 			isa = PBXGroup;
 			children = (
+				BC39B46525F7E37D0002B208 /* CustomCollectionView */,
+				BC39B45C25F7E21B0002B208 /* CustomTableView */,
 				B2130BB725F3E5E2009BF749 /* Features */,
 				B2130BA025F3E4FF009BF749 /* AppDelegate.swift */,
 				B2130BA225F3E4FF009BF749 /* SceneDelegate.swift */,
@@ -64,6 +92,9 @@
 				B2130BA925F3E500009BF749 /* Assets.xcassets */,
 				B2130BAB25F3E500009BF749 /* LaunchScreen.storyboard */,
 				B2130BAE25F3E500009BF749 /* Info.plist */,
+				BC39B45225F7DF6E0002B208 /* Home.storyboard */,
+				BC39B45525F7DFB20002B208 /* HomeViewController.swift */,
+				BC39B45925F7E13E0002B208 /* Cardapio.swift */,
 			);
 			path = Mania;
 			sourceTree = "<group>";
@@ -155,6 +186,70 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BC39B45C25F7E21B0002B208 /* CustomTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B47C25F7ECE10002B208 /* Cardapio */,
+				BC39B46C25F7E94F0002B208 /* Categoria */,
+				BC39B46325F7E2610002B208 /* Promocao */,
+			);
+			path = CustomTableView;
+			sourceTree = "<group>";
+		};
+		BC39B46325F7E2610002B208 /* Promocao */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B45D25F7E24B0002B208 /* PromocaoTableViewCell.swift */,
+				BC39B45E25F7E24B0002B208 /* PromocaoTableViewCell.xib */,
+			);
+			path = Promocao;
+			sourceTree = "<group>";
+		};
+		BC39B46525F7E37D0002B208 /* CustomCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B47525F7EA210002B208 /* Categoria */,
+				BC39B46625F7E39F0002B208 /* Promocao */,
+			);
+			path = CustomCollectionView;
+			sourceTree = "<group>";
+		};
+		BC39B46625F7E39F0002B208 /* Promocao */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B46725F7E3B70002B208 /* PromocaoCollectionViewCell.swift */,
+				BC39B46825F7E3B70002B208 /* PromocaoCollectionViewCell.xib */,
+			);
+			path = Promocao;
+			sourceTree = "<group>";
+		};
+		BC39B46C25F7E94F0002B208 /* Categoria */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B46D25F7E9980002B208 /* CategoriaTableViewCell.swift */,
+				BC39B47025F7E9A30002B208 /* CategoriaTableViewCell.xib */,
+			);
+			path = Categoria;
+			sourceTree = "<group>";
+		};
+		BC39B47525F7EA210002B208 /* Categoria */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B47625F7EA2F0002B208 /* CategoriaCollectionViewCell.swift */,
+				BC39B47925F7EA380002B208 /* CategoriaCollectionViewCell.xib */,
+			);
+			path = Categoria;
+			sourceTree = "<group>";
+		};
+		BC39B47C25F7ECE10002B208 /* Cardapio */ = {
+			isa = PBXGroup;
+			children = (
+				BC39B47D25F7ECFA0002B208 /* CardapioTableViewCell.swift */,
+				BC39B48025F7ED020002B208 /* CardapioTableViewCell.xib */,
+			);
+			path = Cardapio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,8 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2130BAD25F3E500009BF749 /* LaunchScreen.storyboard in Resources */,
+				BC39B46025F7E24B0002B208 /* PromocaoTableViewCell.xib in Resources */,
+				BC39B48125F7ED020002B208 /* CardapioTableViewCell.xib in Resources */,
+				BC39B46A25F7E3B70002B208 /* PromocaoCollectionViewCell.xib in Resources */,
 				B2130BAA25F3E500009BF749 /* Assets.xcassets in Resources */,
 				B2130BA825F3E4FF009BF749 /* Main.storyboard in Resources */,
+				BC39B45325F7DF6E0002B208 /* Home.storyboard in Resources */,
+				BC39B47A25F7EA380002B208 /* CategoriaCollectionViewCell.xib in Resources */,
+				BC39B47125F7E9A30002B208 /* CategoriaTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +328,14 @@
 			files = (
 				B2130BA525F3E4FF009BF749 /* ScannerViewController.swift in Sources */,
 				B2130BA125F3E4FF009BF749 /* AppDelegate.swift in Sources */,
+				BC39B47E25F7ECFA0002B208 /* CardapioTableViewCell.swift in Sources */,
+				BC39B46E25F7E9980002B208 /* CategoriaTableViewCell.swift in Sources */,
 				B2130BA325F3E4FF009BF749 /* SceneDelegate.swift in Sources */,
+				BC39B46925F7E3B70002B208 /* PromocaoCollectionViewCell.swift in Sources */,
+				BC39B45F25F7E24B0002B208 /* PromocaoTableViewCell.swift in Sources */,
+				BC39B45625F7DFB20002B208 /* HomeViewController.swift in Sources */,
+				BC39B45A25F7E13E0002B208 /* Cardapio.swift in Sources */,
+				BC39B47725F7EA2F0002B208 /* CategoriaCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
