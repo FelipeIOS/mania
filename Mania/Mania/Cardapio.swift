@@ -6,9 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
-struct Cardapio {
-	let nome: String
-	let peso: Int
-	let preco: Decimal
+class Cardapio {
+	var name: String
+	var description: String
+	var qtdServe: Int?
+	var price: Double
+	var image: UIImage
+	
+	init(name: String, description: String, qtdServe: Int? = 0, price: Double, image: UIImage) {
+		self.name = name
+		self.description = description
+		self.qtdServe = qtdServe
+		self.price = price
+		self.image = image
+	}
+	
 }

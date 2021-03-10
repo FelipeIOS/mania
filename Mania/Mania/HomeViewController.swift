@@ -10,46 +10,78 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	// MARK: - IBOutlet
-	@IBOutlet weak var anuncioTableView: UITableView!
-	@IBOutlet weak var cardapioTableView: UITableView!
+	@IBOutlet weak var mesaLabel: UILabel!
+	@IBOutlet weak var comandaLabel: UILabel!
+	@IBOutlet weak var categoriaCollectionView: UICollectionView!
+	@IBOutlet weak var pratosTableView: UITableView!
 	
 	// MARK: - Variable
-	var cardapios = [Cardapio]()
-	let recomendados: [Cardapio] = [ Cardapio(nome: "Filet de Frango", peso: 130, preco: 15.90),
-												Cardapio(nome: "New York Angus Prime", peso: 130, preco: 15.90),
-												Cardapio(nome: "Linguiça de Pernil", peso: 200, preco: 21.90),
-												Cardapio(nome: "Chicken & Barbecue", peso: 270, preco: 26.90)
-	]
-	let cortes: [Cardapio] = [ Cardapio(nome: "Filet de Frango", peso: 130, preco: 15.90),
-										Cardapio(nome: "New York Angus Prime", peso: 130, preco: 15.90)
-	]
-	let lanches: [Cardapio] = [ Cardapio(nome: "Mc Lanche Feliz", peso: 130, preco: 15.90)
-	]
-	let bedidas: [Cardapio] = [ Cardapio(nome: "Refrigerante", peso: 130, preco: 15.90)
-	]
+	var controller: HomeController = HomeController()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		configCollectionView()
 		configTableView()
-		cardapios = recomendados
 	}
 	
 	// MARK: - Function
+	private func configCollectionView() {
+		self.categoriaCollectionView.delegate = self
+		self.categoriaCollectionView.dataSource = self
+		self.categoriaCollectionView.showsHorizontalScrollIndicator = false
+		self.categoriaCollectionView.register(CategoriaCollectionViewCell.nib(),
+														  forCellWithReuseIdentifier: CategoriaCollectionViewCell.identifier)
+	}
+	
 	private func configTableView() {
-		self.anuncioTableView.delegate = self
-		self.anuncioTableView.dataSource = self
-		self.anuncioTableView.isScrollEnabled = false
-		self.anuncioTableView.register(PromocaoTableViewCell.nib(),
-												 forCellReuseIdentifier: PromocaoTableViewCell.identifier)
-		self.anuncioTableView.register(CategoriaTableViewCell.nib(),
-												 forCellReuseIdentifier: CategoriaTableViewCell.identifier)
+		self.pratosTableView.delegate = self
+		self.pratosTableView.dataSource = self
 		
-		self.cardapioTableView.delegate = self
-		self.cardapioTableView.dataSource = self
-		self.cardapioTableView.backgroundColor = .black
-		self.cardapioTableView.register(CardapioTableViewCell.nib(),
-												  forCellReuseIdentifier: CardapioTableViewCell.identifier)
+		self.pratosTableView.register(DestaqueTableViewCell.nib(),
+												forCellReuseIdentifier: DestaqueTableViewCell.identifier)
+		self.pratosTableView.register(PratosTableViewCell.nib(),
+												forCellReuseIdentifier: PratosTableViewCell.identifier)
+	}
+	
+}
+
+
+// MARK: - Extension CollectionView
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return controller.getCountCategoria()
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let nameCategoria = self.controller.getNameCategoria(index: indexPath.row)
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriaCollectionViewCell.identifier,
+																			 for: indexPath) as? CategoriaCollectionViewCell
+		else { return UICollectionViewCell() }
+		
+		cell.setupCell(categoria: nameCategoria)
+		return cell
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		
+		switch indexPath.row {
+			case 1:
+				return CGSize(width: 180, height: 50)
+			case 2:
+				return CGSize(width: 300, height: 50)
+			default:
+				return CGSize(width: 150, height: 50)
+		}
+		
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		print("Categoria Selecionada - \(self.controller.getNameCategoria(index: indexPath.row))")
+		
+		let posicao = IndexPath(item: 0, section: indexPath.row)
+		self.pratosTableView.scrollToRow(at: posicao, at: .top, animated: true)
 	}
 	
 }
@@ -58,82 +90,41 @@ class HomeViewController: UIViewController {
 // MARK: - Extension TableView
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return self.controller.getCountCategoria()
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return self.controller.getNameCategoria(index: section)
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 50
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		
-		if tableView == anuncioTableView {
-			return 2
-		} else {
-			return self.cardapios.count
+		if section == 0 {
+			return 1
 		}
-		
+		return self.controller.getCountPratosCategoria(index: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let prato = self.controller.getPrato(categoria: indexPath.section, index: indexPath.row)
 		
-		if tableView == anuncioTableView {
-			
-			if indexPath.row == 0 {
-				guard let cell = tableView.dequeueReusableCell(withIdentifier: PromocaoTableViewCell.identifier,
-																			  for: indexPath) as? PromocaoTableViewCell
-				else { return UITableViewCell() }
-				return cell
-			} else {
-				guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoriaTableViewCell.identifier,
-																			  for: indexPath) as? CategoriaTableViewCell
-				else { return UITableViewCell() }
-				cell.delegate = self
-				return cell
-			}
-			
-		} else {
-			
-			let cardapio = self.cardapios[indexPath.row]
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: CardapioTableViewCell.identifier,
-																		  for: indexPath) as? CardapioTableViewCell
+		if indexPath.section == 0 {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: DestaqueTableViewCell.identifier,
+																		  for: indexPath) as? DestaqueTableViewCell
 			else { return UITableViewCell() }
-			cell.setupCell(prato: cardapio)
 			return cell
-			
 		}
 		
-	}
-	
-}
-
-
-// MARK: - Extension CateTableView
-extension HomeViewController: CategoriaProtocol {
-	
-	func getIndexCategoria(_ index: Int) {
-		print("Index: \(index)")
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: PratosTableViewCell.identifier,
+																	  for: indexPath) as? PratosTableViewCell
+		else { return UITableViewCell() }
 		
-		switch index {
-			// Recomendado
-			case 0:
-				self.cardapios.removeAll()
-				self.cardapios = self.recomendados
-				
-			// Cortes
-			case 1:
-				self.cardapios.removeAll()
-				self.cardapios = self.cortes
-				
-			// Lanches
-			case 2:
-				self.cardapios.removeAll()
-				self.cardapios = self.lanches
-				
-			// Bebidas
-			case 3:
-				self.cardapios.removeAll()
-				self.cardapios = self.bedidas
-				
-			default:
-				self.cardapios.removeAll()
-				self.cardapios = self.recomendados
-		}
-		
-		self.cardapioTableView.reloadData()
+		cell.setupTableCell(prato: prato)
+		return cell
 	}
 	
 }
